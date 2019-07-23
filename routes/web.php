@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.index');
 });
 route::get('index','homeController@index');
 route::get('gioithieu','homeController@gioithieu');

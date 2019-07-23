@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\loaisanpham;
+use App\sanpham;
 class homeController extends Controller
 {
+    function __construct(){
+        $loaisp=LoaiSanPham::all();
+        $sanpham=SanPham::all();
+        view()->share('loaisp',$loaisp);
+        view()->share('sanpham',$sanpham);
+    }
     public function index(){
     	return view('layout.index');
     }

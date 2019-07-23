@@ -4,17 +4,13 @@
 	box-sizing: border-box;
 	font-family: Myriad Pro;
 }
-.container{
-	max-width: 1170px; 
-}
 .header{
 	height: 100px;
 	width: 100%;
 	background-color: #ffffff;
 }
 .header-icon{
-	display: flex;
-	
+	display: flex;	
 }
 .icon-header{
 	border-radius:50%;
@@ -63,17 +59,17 @@
 	height:60px;
 	width: 100%;
 }
-.menu ul{
+.menu .menu-menu ul{
 	height: 60px;
 
 }
-.menu ul li{
+.menu .menu-menu ul li{
 	display: inline-table;
 	line-height: 55px;
 	min-width:95px; 
 	padding-right: 10px;
 }
-.menu ul li a{
+.menu .menu-menu ul li a{
 	color:#ffffff;
 	font-size: 14px;
 	font-family: Myriad Pro;
@@ -92,10 +88,10 @@
 	color:#070707;
 	font-family: Myriad Pro;
 }
-.menu ul li:hover{
+.menu .menu-menu ul li:hover{
 	background-color:#61a024;
 }
-.menu ul li a:hover{
+.menu .menu-menu ul li a:hover{
 	text-decoration:none;
 }
 .menu-cart{
@@ -116,11 +112,82 @@
 .btn-group.open .dropdown-toggle{
 	box-shadow: none!important;
 }
-
+.menu .navbar-collapse{
+	background-color:#75b239!important;
+}
+.menu .navbar-header{
+	background-color:#75b239!important;
+}
+.navbar-toggle .icon-bar{
+	background-color: #ffffff;
+}
 /*ket thuc menu*/
 .container-flui-slide{
 	margin:0px;
 	padding:0px; 
+	position: relative;
+}
+.slide img{
+}
+.sanpham-slide-Breadcrumbs{
+	position:absolute;
+	top: 312px;
+    left: 124px;
+}
+.breadcrumb-edit{
+	background: none;
+	padding: 0px;
+}
+.breadcrumb-edit a{
+	color:#364434;
+	font-size: 20px;
+}
+.sanpham-slide-Breadcrumbs .breadcrumb>li+li:before{
+	color:#364434;
+	font-size: 20px; 
+}
+.sanpham-slide-Breadcrumbs h2{
+	font-size: 50px;
+	color: #000000;
+}
+.slide .item .active img{
+	position: relative;
+}
+.home-slide-text{
+	position: absolute;
+	top: 124px;
+    left: 198px;
+}
+.home-slide-text p:nth-child(1){
+	font-size: 15px;
+	color: #ffffff;
+	text-align: center;
+}
+.home-slide-text:nth-child(2){
+	font-size: 18px;
+	color: #ffffff;
+	text-align: center;
+}
+.home-slide-btn{
+	width: 210px;
+	height: 50px;
+	border-radius: 25px;
+	background-color: #80987e;
+	position: relative;
+	top: -199px;
+    left: 744px;
+    line-height: 50px;
+    text-align: center;
+}
+.home-slide-btn a{
+	 color: #ffffff;
+    font-size: 19px;
+}
+.home-slide-btn a:hover{
+	text-decoration: none;
+}
+.home-slide-btn:hover{
+	background-color: #61a024;
 }
 /*kt thuc slide*/
 .container-fluid-top{
@@ -133,13 +200,12 @@
 }
 .content-sanpham img{
 	max-height: 246px;
-	max-width: 500px;
-}
-.content-sanpham-show1 img{
-	margin-left:40px;
+
 }
 .content-gioithieu-tittle{
-	margin-top: 120px;
+	margin-top: 10%;
+	border-radius: 20%;
+	background:none;
 }
 .content-gioithieu-tittle h1{
 	font-family:Myriad Pro;
@@ -158,10 +224,12 @@
 	font-size: 20px;
 	color: #364434;
 }
+.height-thumbnail .thumbnail{
+	height: 350px;
+}
 .content-chatluongsp{
 	margin-top: 60px;
-	margin:0 auto;
-	padding-left: 50px;
+	margin:0 auto
 }
 .content-chatluongsp img{
 	max-width:100%;
@@ -199,9 +267,57 @@
 }
 .content-sanpham-loaisp-btn-active{
 	width: 170px;
-	height: 32px;
-	border-radius: 15px;
+	height: 34px;
+	border-radius: 25px;
 	background-color: #75b239;
+}
+.tab-sp .nav-tabs{
+	border: none;
+	margin-bottom: 20px;
+}
+.tab-sp ul {
+	width: 53%;
+	margin: 0 auto;
+}
+.tab-sp ul li{
+	padding: 10px;
+	margin:0 auto;
+}
+.nav{
+	padding-bottom: 10px;
+}
+.tab-sp .li-active{
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #75b239;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 25px;
+}
+.tab-sp .li-active a{
+	color: #ffffff;
+}
+.tab-sp .li-active a:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+.tab-sp .li-sp{
+	width: 110%;
+	line-height: 40px;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 25px;
+}
+.tab-sp .li-sp a{
+	color: #9b9b9b;
+}
+.tab-sp .li-sp:hover{
+	background-color: #75b239;
+}
+.tab-sp .li-sp a:hover{
+	color: #ffffff;
+	text-decoration: none;
 }
 .content-sanpham-loaisp-btn-active p{
 	color: #ffffff;
@@ -226,12 +342,16 @@
 	color: #75b239;
 }
 .thumbnail img{
-	width: 115px;
-	height: 230px;
+	max-width: 115px;
+	height: 200px;
+	overflow: hidden;
 }
 .thumbnail i{
 	text-align: center;   
 	color: #ffd802;
+}
+.content-sanpham-show .thumbnail{
+	height: 350px;
 }
 .content-sanpham-show-start{
 	max-width: 91px;
@@ -260,18 +380,16 @@
 .content-admin-slide-1{
 	background-color: #fefffe;
 	max-width: 100%;
-	height: 288px;
-	max-height: 288px;
 	border-radius: 30px;
 	display: flex; 
 }
-.carousel-control.right{
-	border-radius:50%;
-	background-image: none;
+.carousel-control.right {
+	border-radius:25px;
+	background-image:none;
 }
-.carousel-control.left{
-	border-radius:50%;
-	background-image: none;
+.carousel-control.left {
+	border-radius:25px;
+	background-image:none;
 }
 .btn-right span{
 	background-color:#75b239;
@@ -280,7 +398,7 @@
 	background-color:#dcdddc;
 }
 .content-admin-avatar{
-	padding:75px 10px 0px 120px;  
+	padding:6% 1% 0 10%; 
 }
 .content-admin-profile{
 	max-width: 750px;
@@ -307,27 +425,26 @@ p.content-admin-profile-p{
 .content-doitac h4{
 	font-size: 32px;
 	color: #151615;
+	text-align: center;
 }
 .thumbnail-logo img{
 	width:100%;
 	height:150px;
 }
-.thumbnail-logo{
-	margin-left: 60px;
-	margin-right: 30px; 
+.tab-content a:hover{
+	text-decoration: none;
 }
 /*ket thuc content*/
 .footer{
-	margin-top: 300px;
+	margin-top: 40%;
 	position: relative;
 }
 .footer-form{
 	position: absolute;
-	margin-left: 35px;
+	/*margin-left: 35px;*/
 	width: 78%;
+	margin-left: 3%;
 	background-color: #75b239;
-	height: 270px;
-	max-height: 270px;
 	z-index: 9999; 
 	border-radius: 20px;
 	top: -170px;
@@ -335,12 +452,11 @@ p.content-admin-profile-p{
 .footer-form-layout{
 	display: flex;
 }
-.footer-form-layout-col1{
-	max-width:400px;
-	padding:50px; 
+.pd-col1{
+	padding: 6% 7% 6% 3%
 }
 .footer-form-layout-col1 h1{
-	font-size: 36px;
+	font-size: 250%;
 	color: #fefefe;
 }
 .footer-form-layout-col1 p{
@@ -348,30 +464,26 @@ p.content-admin-profile-p{
 	color: #ffffff;
 }
 .footer-form-layout-col2{
-	max-width:400px;
-	padding:50px 30px 50px 30px; 
-}
-.footer-form-layout-col2{
-	font-size:16px; 
 	color: #fefefe;
+	padding-top:10%;
+	padding-right: 1%;
 }
 .footer-form-layout-col2 input{
-	padding:10px 10px 10px 20px; 
-	margin-bottom: 30px;
 	background-color: #75b239;
 	border: 1px solid #ffffff;
 }
+.footer-form-layout-col2 input:nth-child(2){
+	margin-bottom: 20%;
+}
+.footer-form-layout-col3{
+	padding-top: 10%;
+} 
 .footer-form-layout-col3 textarea{
-	padding:5px; 
 	margin-bottom: 20px;
 	background-color: #75b239;
 	border: 1px solid #ffffff;
 	color: #ffffff;
 	position: relative;
-}
-.footer-form-layout-col3{
-	max-width:400px;
-	padding:50px; 
 }
 .footer-form-layout-col3 p{
 	font-size:16px; 
@@ -379,9 +491,10 @@ p.content-admin-profile-p{
 }
 .footer-form-layout-col3 input{
 	position: absolute;
-	bottom: 87px;
-	right: 122px;
+	bottom: 10%;
+	right: 12%;
 	border-radius: 50%;
+	z-index: 1000;
 	width: 25px;
 	height: 25px;
 	background-color: #ffffff;
@@ -389,16 +502,17 @@ p.content-admin-profile-p{
 }
 .footer-form-layout-col3 i{
 	position: absolute;
-	bottom: 92px;
-	right: 128px;
+	bottom:12%;
+	right: 13%;
 	color: #75b239;
+	z-index: 1000;
 }
 .footer-bgblack{
 	background-color: #161616;
 
 }
 .footer-col1{
-	margin-top: 125px;
+	margin-top: 15%;
 }
 .footer-col1 p{
 	padding:35px 0 35px 0;
@@ -406,7 +520,7 @@ p.content-admin-profile-p{
 	color: #c8c8c8; 
 }
 .footer-col2{
-	margin-top: 175px;
+	margin-top: 15%;
 }
 .footer-col2 i{
 	color: #75b239;
@@ -418,10 +532,10 @@ p.content-admin-profile-p{
 	font-size: 22px;
 }
 .footer-col3{
-	margin-top: 245px;
+	margin-top: 20%;
 }
 .footer-col4{
-	margin-top: 175px;
+	margin-top: 15%;
 }
 .footer-col2-row{
 	margin-top:16px; 
@@ -528,12 +642,12 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	margin: 0 auto;
 }
 .about-content-doctor{
-	width: 600px;
 	height: 300px;
-	text-align: center;
-	margin: 0 auto;
 	margin-bottom: 70px;
 	margin-top: 45px;
+}
+.about-content-doctor img{
+	padding-left: 10%;
 }
 .about-content-video{
 	margin-top: 70px;
@@ -639,7 +753,7 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	color:#ffffff;
 	background-color: #75b239;
 }
-/* css rang san pham*/
+/* css trang san pham*/
 .content-sanpham{
 	margin-top: 100px;
 }
