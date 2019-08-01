@@ -28,6 +28,7 @@
 							</ol>
 						</div>
 					</div>
+					@if(Cart::getSubTotal() >= 1)
 					<div class=" table-responsive giohang-table">
 						<table class="table text-center">
 							<tr>
@@ -36,47 +37,37 @@
 								<th>Giá Tiền</th>
 								<th>Tổng Tiền</th>
 							</tr>
+							@foreach($items as $item )
 							<tr>
 								<td>
 									<div class="giohang-image">
-										<a href="" title=""><i class="fas fa-times"></i></a>
-										<div>
-											<img src="uploads/giohangsp.png" alt="">
+									<a href="cart/delete/{{$item->id}}" title=""><i class="fas fa-times"></i></a>
+										<div style="width:50%">
+											<img src="uploads/{{$item->attributes->img}}" alt="" >
 										</div>
 										<div>
-											<p>Vitamin Multivites</p>
-										</div>
-									</div>
-								</td>
-								<td class="edit-row-table"><input type="number" name="" value="1"></td>
-								<td class="edit-row-table"><p>180.000đ</p></td>
-								<td class="edit-row-table"><p>360.000đ</p></td>
-							</tr>
-							<tr>
-								<td>
-									<div class="giohang-image">
-										<a href="" title=""><i class="fas fa-times"></i></a>
-										<div>
-											<img src="uploads/giohangsp.png" alt="">
-										</div>
-										<div>
-											<p>Vitamin Multivites</p>
+											<p>{{$item->name}}</p>
 										</div>
 									</div>
 								</td>
-								<td class="edit-row-table"><input type="number" name="" value="1"></td>
-								<td class="edit-row-table"><p>180.000đ</p></td>
-								<td class="edit-row-table"><p>180.000đ</p></td>
+							<td class="edit-row-table"><input type="number" name="" value="{{$item->quantity}}" onchange="updateCart(this.value,'{{$item->id}}')"></td>
+							<td class="edit-row-table">
+								<p>{{number_format($item->price,0,
+							",",".")}}</p>
+							</td>
+								<td class="edit-row-table"><p>{{number_format($item->price*$item->quantity,0,
+										",",".")}}</p></td>
 							</tr>
+							@endforeach
 							<tr>
 								<td colspan="4">
 									<div class="giohang-redirect">
-										<a href="" title="">
+										<a href="TrangChu" title="">
 											<div class="giohang-btn-active">
 												Tiếp tục xem sản phẩm
 											</div>
 										</a>
-										<a href="" title="">
+										<a href="cart/show" title="">
 											<div  class="giohang-btn">
 												Cập nhật giỏ hàng
 											</div>
@@ -94,22 +85,40 @@
 									<p>Tổng cộng:</p>
 								</div>
 								<div class="giohang-addres-right">
-									<p>540.000đ</p>
+									<p>{{number_format($total,0,",",".")}}</p>
 									<p>Số 19 Trần Huy Liệu - Tp.Vinh - Nghệ An</p>
-									<p>540.000đ</p>
+									<p>{{number_format($total,0,",",".")}}</p>
 								</div>
 							</div>
 						</div>
 						<div class="thanhtoan-redirect">
+							<a href="cart/pay">
 							<div class="giohang-btn-active btnthanhtoan">
 								Tiến hành thanh toán
 							</div>
+							</a>
 						</div>
 					</div>
+					@else
+					<div class="text-center">
+						<h2>Giỏ Hàng Trống</h2>
+					</div>	
+					@endif
 					<!--  -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	function updateCart(qty,id){
+		$.get(
+			'{{asset('cart/update')}}',
+			{qty:qty,id:id},
+			function(){
+				location.reload();
+			}
+		);
+	}
+</script>
 @endsection('main')

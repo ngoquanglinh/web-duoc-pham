@@ -29,7 +29,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-md-7 col-xs-12>
+						<div class="col-md-7 col-xs-12">
 							<div class="pay-right pay-complete-left">
 								<h4>Đơn hàng của bạn</h4>
 								<div class="pay-donhang">
@@ -41,20 +41,13 @@
 									</div>
 									<hr>
 								</div>
-								<div class="pay-donhang">
-									<div  class="pay-donhang-left">
-										<ul>
-											<li>Vitamin MultiVites x2</li>
-											<li>Vitamin MultiVites x1</li>
-										</ul>
-									</div>
-									<div class="pay-donhang-right">
-										<ul>
-											<li>360.000đ</li>
-											<li>180.000đ</li>
-										</ul>
-									</div>
+								<div>
+									<br>
+									@foreach($idhd->chitiethoadon as $hd)
+										<span style="font-size:18px;color:black">{{$hd->sanpham->TenSP}}</span>
+										<span style="font-size:18px;color:black;float:right">{{number_format($hd->DonGia,0,",",".")}}</span>
 									<hr>
+									@endforeach
 								</div>
 								<div class="pay-donhang">
 									<div  class="pay-donhang-left">
@@ -64,10 +57,10 @@
 										<p>Tổng cộng:</p>
 									</div>
 									<div class="pay-donhang-right">
-										<p>540.000đ</p>
+										<p>{{number_format($idhd->TongTien,0,",",".")}}</p>
 										<p>Miễn phí</p>
-										<p>Trả tiền mặt khi thanh toán</p>
-										<p>540.000đ</p>
+										<p>{{$idhd->ThanhToan}}</p>
+										<p>{{number_format($idhd->TongTien,0,",",".")}}</p>
 									</div>
 								</div>
 								<div class="pay-chuy">
@@ -80,16 +73,16 @@
 							<div class="pay-completed">
 								<h4>Cám ơn bạn đã mua hàng ! Đơn đặt hàng của bạn đã được nhận</h4>
 								<div class="pay-completed-cart">
-									<i class="fas fa-check"></i><span><b>Mã đơn hàng:</b>1234</span>
+								<i class="fas fa-check"></i><span><b>Mã đơn hàng: </b>{{$idhd->id}}</span>
 								</div>
 								<div class="pay-completed-cart">
-									<i class="fas fa-check"></i><span><b>Ngày đặt hàng:</b>Thứ 6, 21/12/2018</span>
+									<i class="fas fa-check"></i><span><b>Ngày đặt hàng: </b>{{$idhd->NgayDat}}</span>
 								</div>
 								<div class="pay-completed-cart">
-									<i class="fas fa-check"></i><span><b>Tổng cộng: </b>540.000đ</span>
+									<i class="fas fa-check"></i><span><b>Tổng cộng: </b>{{number_format($idhd->TongTien,0,",",".")}}</span>
 								</div>
 								<div class="pay-completed-cart">
-									<i class="fas fa-check"></i><span><b>Phương thức thanh toán: </b>Trả tiền mặt</span>
+									<i class="fas fa-check"></i><span><b>Phương thức thanh toán: </b>{{$idhd->ThanhToan}}</span>
 								</div>
 							</div>
 						</div>

@@ -36,7 +36,7 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 		</div>
-	</div>
+	</div>  
 </div>
 <!-- ket thuc slide -->
 
@@ -52,7 +52,6 @@
 				</div>
 			</div>
 			<!-- ket thucc show san pham -->
-
 			<div class="row  col-md-12 col-xs-12 content-gioithieu-tittle">
 				<div class="col-md-12 col-xs-12">
 					<h1>
@@ -123,202 +122,241 @@
 						</div>
 					</li>	
 					@endif
-				<?php $i++?>
-				@endforeach
-				<?php $j=0 ?>
-				@foreach($loaisp as $lsp)
-				@if($j != 0)
-				 	<li>
+					<?php $i++?>
+					@endforeach
+					<!--  -->
+					<?php $j=0 ?>
+					@foreach($loaisp as $lsp)
+					@if($j == 1)
+					<li>
 						<div class="li-sp">
 							<a href="#spme"role="tab" data-toggle="tab">{{$lsp->TenLoaiSP}}</a>
 						</div>
-					</li>	
-				@endif
-				<?php $j++?>
-				@endforeach
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane active" id="spmoi">
-					<div class="row">
-						<div class="col-md-12 col-xs-12 height-thumbnail">
-							<div class="row">
-								@foreach($loaisp as $lsp)
-								<?php 
-								$data1=$lsp->sanpham->where('NoiBat',1)->sortByDesc('created_at')->take(8);
-								?>
-								@foreach($data1 as $sp)
-								<div class="col-md-3 col-xs-6">
-									<a href="" title="">
-									<div class="thumbnail">
-										<img src="uploads/{{$sp->ImageSP}}" alt="sanpham">
-										<div class="caption">
-											<h3>{{$sp->TenSP}}</h3>
-											<div class="content-sanpham-show-start">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
+					</li>
+					@elseif($j==2)	
+					<li>
+						<div class="li-sp">
+							<a href="#spbe"role="tab" data-toggle="tab">{{$lsp->TenLoaiSP}}</a>
+						</div>
+					</li>
+					@endif
+					<?php $j++?>
+					@endforeach
+					<!--  -->
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="spmoi">
+						<div class="row">
+							<div class="col-md-12 col-xs-12 height-thumbnail">
+								<div class="row">
+									@foreach($loaisp as $lsp)
+									<?php 
+									$data1=$lsp->sanpham->where('idLoaiSP',1)->sortByDesc('created_at')->take(8);
+									?>
+									@foreach($data1 as $sp)
+									<div class="col-md-3 col-xs-6">
+										<a href="sanpham/{{$sp['id']}}" title="">
+											<div class="thumbnail">
+												<img src="uploads/{{$sp['ImageSP']}}" alt="sanpham">
+												<div class="caption">
+													<h3>{{$sp['TenSP']}}</h3>
+													<div class="content-sanpham-show-start">
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+													</div>
+													@if($sp['SPKhuyenMai'] == 1 )
+													<p>{{number_format($sp['GiaKhuyenMai'],0,",",".")}}vnđ</p>
+													@else
+													<p>{{number_format($sp['Gia'],0,",",".")}}vnđ</p>
+													@endif
+												</div>
 											</div>
-											<p>{{$sp->Gia}}.000 vnđ</p>
-										</div>
+										</a>
 									</div>
-									</a>
-								</div>
-								@endforeach
-								@endforeach
-							</div> 
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane" id="spme">
-					<div class="row">
-						<div class="col-md-12 col-xs-12 height-thumbnail">
-							<div class="row">
-								@foreach($loaisp as $lsp)
-								<?php 
-								$data1=$lsp->sanpham->where('NoiBat',1)->sortByDesc('created_at')->take(8);
-								?>
-								@foreach($data1 as $sp)
-								<div class="col-md-3 col-xs-6">
-									<a href="" title="">
-									<div class="thumbnail">
-										<img src="uploads/{{$sp->ImageSP}}" alt="sanpham">
-										<div class="caption">
-											<h3>{{$sp->TenSP}}</h3>
-											<div class="content-sanpham-show-start">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-											<p>{{$sp->Gia}}.000 vnđ</p>
-										</div>
-									</div>
-									</a>
-								</div>
-								@endforeach
-								@endforeach
-							</div> 
-						</div>
-					</div>
-				</div>
-				<div class="tab-pane" id="spbe">
-					<div class="row">
-						<div class="col-md-12 col-xs-12 height-thumbnail">
-							<div class="row">
-								@foreach($loaisp as $lsp)
-								<?php 
-								$data1=$lsp->sanpham->where('NoiBat',1)->sortByDesc('created_at')->take(8);
-								?>
-								@foreach($data1 as $sp)
-								<div class="col-md-3 col-xs-6">
-									<a href="" title="">
-									<div class="thumbnail">
-										<img src="uploads/{{$sp->ImageSP}}" alt="sanpham">
-										<div class="caption">
-											<h3>{{$sp->TenSP}}</h3>
-											<div class="content-sanpham-show-start">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-											<p>{{$sp->Gia}}.000 vnđ</p>
-										</div>
-									</div>
-									</a>
-								</div>
-								@endforeach
-								@endforeach
-							</div> 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-	</div>
-	<!--  -->
-	<div class="row content-sanpham-more">
-		<div class="content-sanpham-more-btn">
-			<p>Xem Thêm</p>
-		</div>
-	</div>
-	<!--  -->
-	<div class="row">
-		<div class="col-md-12 col-xs-12">
-			<div class="row col-md-12 col-xs-12 content-gioithieu-tittle">
-				<div >
-					<h1>
-						Niềm tin của khách hàng
-					</h1>
-				</div>
-				<div class="content-gioithieu">
-					<p>
-						FGC Pharmacy cung cấp các dược liệu chiết xuất từ thiên nhiên tốt nhất dành cho sức khỏe, là đối tác đáng tin cậy của mọi nhà.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--  -->
-	<div class="row ">
-		<div class="col-md-12 col-xs-12">
-			<div class="content-admin-slide">
-				<div id="carousel-example-generic-mylove" class="carousel slide" data-ride="carousel">
-					<!-- Wrapper for slides -->
-					<div class="carousel-inner">
-						<div class="item active">
-							<div class="content-admin-slide-1">
-								<div class="content-admin-avatar">
-									<img src="uploads/avatar1.png" alt="" class="img-responsive">
-								</div>
-								<div class="content-admin-profile">
-									<h3>Nguyễn Quỳnh Anh</h3>
-									<p>Quản lý cửa hàng thuốc</p>
-									<p class="content-admin-profile-p">Từ khi có con mọi chi tiêu trong gia đình tôi bắt đầu thiếu hụt. Nhưng bây giờ nhờ thêm việc kinh doanh các sản phẩm FGC Pharmacy, mà thu nhập cao hơn hẳn lúc trước, chi tiêu thoải mái hơn, có dư để mua được nhà chứ không cần đi thuê nữa!</p>
-								</div>
-							</div>	
-						</div>
-						<div class="item">
-							<div class="content-admin-slide-1">
-								<div class="content-admin-avatar">
-									<img src="uploads/avatar1.png" alt="" class="img-responsive">
-								</div>
-								<div class="content-admin-profile">
-									<h3>Nguyễn Quỳnh Anh</h3>
-									<p>Quản lý cửa hàng thuốc</p>
-									<p class="content-admin-profile-p">Từ khi có con mọi chi tiêu trong gia đình tôi bắt đầu thiếu hụt. Nhưng bây giờ nhờ thêm việc kinh doanh các sản phẩm FGC Pharmacy, mà thu nhập cao hơn hẳn lúc trước, chi tiêu thoải mái hơn, có dư để mua được nhà chứ không cần đi thuê nữa!</p>
-								</div>
+									@endforeach
+									@endforeach
+								</div> 
 							</div>
-							<div class="carousel-caption">
+						</div>
+						<div class="row content-sanpham-more">
+							<div class="content-sanpham-more-btn">
+								<p>Xem Thêm</p>
 							</div>
 						</div>
 					</div>
+					<div class="tab-pane" id="spme">
+						<div class="row">
+							<div class="col-md-12 col-xs-12 height-thumbnail">
+								<div class="row">
+									@foreach($loaisp as $lsp)
+									<?php 
+									$data2=$lsp->sanpham->where('idLoaiSP',2)->sortByDesc('created_at')->take(8);
+									?>
+									@foreach($data2 as $sp)
+									<div class="col-md-3 col-xs-6">
+										<a href="sanpham/{{$sp['id']}}" title="">
+											<div class="thumbnail">
+												<img src="uploads/{{$sp->ImageSP}}" alt="sanpham">
+												<div class="caption">
+													<h3>{{$sp->TenSP}}</h3>
+													<div class="content-sanpham-show-start">
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+													</div>
+													@if($sp['SPKhuyenMai'] == 1 )
+													<p>{{number_format($sp['GiaKhuyenMai'],0,",",".")}}vnđ</p>
+													@else
+													<p>{{number_format($sp['Gia'],0,",",".")}}vnđ</p>
+													@endif
+												</div>
+											</div>
+										</a>
+									</div>
+									@endforeach
+									@endforeach
+								</div> 
+							</div>
+						</div>
+						<div class="row content-sanpham-more">
+							<a href="sanphamchome">
+								<div class="content-sanpham-more-btn">
+									<p>Xem Thêm</p>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="tab-pane" id="spbe">
+						<div class="row">
+							<div class="col-md-12 col-xs-12 height-thumbnail">
+								<div class="row">
+									@foreach($loaisp as $lsp)
+									<?php 
+									$data3=$lsp->sanpham->where('idLoaiSP',3)->sortByDesc('created_at')->take(8);
+									?>
+									@foreach($data3 as $sp)
+									<div class="col-md-3 col-xs-6">
+										<a href="sanpham/{{$sp['id']}}" title="">
+											<div class="thumbnail">
+												<img src="uploads/{{$sp->ImageSP}}" alt="sanpham">
+												<div class="caption">
+													<h3>{{$sp->TenSP}}</h3>
+													<div class="content-sanpham-show-start">
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+													</div>
+													@if($sp['SPKhuyenMai'] == 1 )
+													<p>{{number_format($sp['GiaKhuyenMai'],0,",",".")}}vnđ</p>
+													@else
+													<p>{{number_format($sp['Gia'],0,",",".")}}vnđ</p>
+													@endif
+												</div>
+											</div>
+										</a>
+									</div>
+									@endforeach
+									@endforeach
+								</div> 
+							</div>
+						</div>
+						<div class="row content-sanpham-more">
+							<a href="sanphamchobe">
+								<div class="content-sanpham-more-btn">
+									<p>Xem Thêm</p>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<!--  -->
+		{{-- <div class="row content-sanpham-more">
+			<div class="content-sanpham-more-btn">
+				<p>Xem Thêm</p>
+			</div>
+		</div> --}}
+		<!--  -->
+		<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<div class="row col-md-12 col-xs-12 content-gioithieu-tittle">
+					<div >
+						<h1>
+							Niềm tin của khách hàng
+						</h1>
+					</div>
+					<div class="content-gioithieu">
+						<p>
+							FGC Pharmacy cung cấp các dược liệu chiết xuất từ thiên nhiên tốt nhất dành cho sức khỏe, là đối tác đáng tin cậy của mọi nhà.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--  -->
+		<div class="row ">
+			<div class="col-md-12 col-xs-12">
+				<div class="content-admin-slide">
+					<div id="carousel-example-generic-mylove" class="carousel slide" data-ride="carousel">
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+								<div class="content-admin-slide-1">
+									<div class="content-admin-avatar">
+										<img src="uploads/avatar1.png" alt="" class="img-responsive">
+									</div>
+									<div class="content-admin-profile">
+										<h3>Nguyễn Quỳnh Anh</h3>
+										<p>Quản lý cửa hàng thuốc</p>
+										<p class="content-admin-profile-p">Từ khi có con mọi chi tiêu trong gia đình tôi bắt đầu thiếu hụt. Nhưng bây giờ nhờ thêm việc kinh doanh các sản phẩm FGC Pharmacy, mà thu nhập cao hơn hẳn lúc trước, chi tiêu thoải mái hơn, có dư để mua được nhà chứ không cần đi thuê nữa!</p>
+									</div>
+								</div>	
+							</div>
+							<div class="item">
+								<div class="content-admin-slide-1">
+									<div class="content-admin-avatar">
+										<img src="uploads/avatar1.png" alt="" class="img-responsive">
+									</div>
+									<div class="content-admin-profile">
+										<h3>Nguyễn Quỳnh Anh</h3>
+										<p>Quản lý cửa hàng thuốc</p>
+										<p class="content-admin-profile-p">Từ khi có con mọi chi tiêu trong gia đình tôi bắt đầu thiếu hụt. Nhưng bây giờ nhờ thêm việc kinh doanh các sản phẩm FGC Pharmacy, mà thu nhập cao hơn hẳn lúc trước, chi tiêu thoải mái hơn, có dư để mua được nhà chứ không cần đi thuê nữa!</p>
+									</div>
+								</div>
+								<div class="carousel-caption">
+								</div>
+							</div>
+						</div>
 
-					<!-- Controls -->
-					<a class="left carousel-control btn-left" href="#carousel-example-generic-mylove" role="button" data-slide="prev">
-						<span class="glyphicon glyphicon-chevron-left"></span>
-					</a>
-					<a class="right carousel-control btn-right" href="#carousel-example-generic-mylove" role="button" data-slide="next">
-						<span class="glyphicon glyphicon-chevron-right"></span>
-					</a>
+						<!-- Controls -->
+						<a class="left carousel-control btn-left" href="#carousel-example-generic-mylove" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control btn-right" href="#carousel-example-generic-mylove" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!--  -->
-	<div class="row">
-		<div class="content-doitac">
-			<h4>
-				Đối tác toàn quốc
-			</h4>
+		<!--  -->
+		<div class="row">
+			<div class="content-doitac">
+				<h4>
+					Đối tác toàn quốc
+				</h4>
+			</div>
 		</div>
+		<!--  -->
 	</div>
-	<!--  -->
-</div>
 </div>
 </div>
 <!--  -->
@@ -328,7 +366,7 @@
 			<div class=" col-md-12 col-xs-12">
 				<div class="col-md-2 col-xs-4">
 					<a href="#" class="thumbnail">
-						<img src="uploads/6.jpg" alt="..." class="img-responsive"> 
+						<img src="uploads/6.jpg" alt="..." class="img-responsive" class="brand-logo"> 
 					</a>
 				</div>
 				<div class="col-md-2 col-xs-4">

@@ -50,22 +50,23 @@
 				</div>
 				<div class="collapse navbar-collapse menu-menu" id="bs-example-navbar-collapse-1">
 					<ul>
-						<li><a href="">Trang chủ</a></li>
+						<li><a href="TrangChu">Trang chủ</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">giới thiệu<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-							</ul>
+							<div class="dropdown-menu">
+								<div><a href="gioithieu">gioi thieu</a></div>
+							</div>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">sản phẩm<span class="caret"></span></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Action</a></li>
-							</ul>
+							<div class="dropdown-menu">
+								<div><a href="sanphamchome">SẢN PHẨM CHO MẸ</a></div>
+								<div><a href="sanphamchobe">SẢN PHẨM CHO BÉ</a></div>
+							</div>		
 						</li>
-						<li><a href="">kiến thức sức khỏe</a></li>
-						<li><a href="">Liên Hệ</a></li>
-						<li class="menu-cart"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
+						<li><a href="blog">kiến thức sức khỏe</a></li>
+						<li><a href="lienhe">Liên Hệ</a></li>
+						<li class="menu-cart"><a href="cart/show"><i class="fas fa-shopping-cart"></i></a></li>
 						<li class="menu-search"><a href=""><i class="fas fa-search"></i></a></li>
 					</ul>
 				</div>

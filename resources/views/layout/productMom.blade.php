@@ -66,7 +66,7 @@
 						Dược liệu dành cho mẹ bầu
 					</h1>
 				</div>
-				<div class="col-md-12 col-xs-12 content-gioithieu">
+				<div class=" content-gioithieu">
 					<p>
 						FGC Pharmacy cung cấp các dược liệu chiết xuất từ thiên nhiên tốt nhất dành cho sức khỏe, là đối tác đáng tin cậy của mọi nhà.
 					</p>
@@ -76,11 +76,13 @@
 			<div class="row content-sanpham-show">
 				<div class="col-md-12 col-xs-12">
 					<div class="row">
+						@foreach($spchome as $spcm)
 						<div class="col-md-3 col-xs-6">
+							<a href="sanpham/{{$spcm->id}}">
 							<div class="thumbnail">
-								<img src="uploads/sanpham1.png" alt="sanpham" class="img-responsive">
+							<img src="uploads/{{$spcm->ImageSP}}" alt="sanpham" class="img-responsive">
 								<div class="caption">
-									<h3>Swiss B50</h3>
+								<h3>{{$spcm->TenSP}}</h3>
 									<div class="content-sanpham-show-start">
 										<i class="fas fa-star"></i>
 										<i class="fas fa-star"></i>
@@ -88,130 +90,20 @@
 										<i class="fas fa-star"></i>
 										<i class="fas fa-star"></i>
 									</div>
-									<p>58.000vnd</p>
+									@if($spcm->SPKhuyenMai == 1 )
+										<p>{{number_format($spcm->GiaKhuyenMai,0,",",".")}}vnđ</p>
+										@else
+										<p>{{number_format($spcm->Gia,0,",",".")}}vnđ</p>
+									@endif
 								</div>
 							</div>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham2.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Pure Rosehip</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>18.000vnd</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham3.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Super 45+</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>82.000vnd</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham4.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Sundown Naturals</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>110.000vnd</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham1.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Swiss B50</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>58.000vnd</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham2.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Pure Rosehip</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>18.000vnd</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham3.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Super 45+</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>82.000vnd</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-3 col-xs-6">
-							<div class="thumbnail">
-								<img src="uploads/sanpham4.png" alt="sanpham" class="img-responsive">
-								<div class="caption">
-									<h3>Sundown Naturals</h3>
-									<div class="content-sanpham-show-start">
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-										<i class="fas fa-star"></i>
-									</div>
-									<p>110.000vnd</p>
-								</div>
-							</div>
-						</div>
+							</a>
+						</div>	
+						@endforeach
 					</div>
 					<!--  -->
-					<div class="row content-sanpham-more">
-						<div class="content-sanpham-more-btn">
-							<p>Xem Thêm</p>
-						</div>
+					<div class="text-center">
+						{{$spchome->links()}}
 					</div>
 					<!--  -->
 					<div class="row">

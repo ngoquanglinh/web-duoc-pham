@@ -5,7 +5,7 @@
 				<div class="col-md-3 col-xs-12 footer-col1">
 					<img src="uploads/logo.png" alt="">
 					<p>Trân trọng giá trị thảo dược, Bảo Nhiên dành trọn tâm huyết của mình để cho ra đời các sản phẩm chất lượng nhất – những bảo vật thật sự đến từ thiên nhiên với ý nghĩa bảo vệ và chăm sóc sức khỏe cộng đồng.</p>
-					<img src="uploads/bocongthuong.png" alt="">
+					<img src="uploads/bocongthuong.png" alt="" style="transform:rotate(90deg);">
 				</div>
 				<div class="col-md-3 col-xs-12 footer-col2">
 					<h4>Thông tin liên hệ</h4>

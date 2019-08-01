@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\loaisanpham;
 use App\sanpham;
-class homeController extends Controller
+class HomeController extends Controller
 {
     function __construct(){
         $loaisp=LoaiSanPham::all();
@@ -14,16 +14,19 @@ class homeController extends Controller
         view()->share('sanpham',$sanpham);
     }
     public function index(){
-    	return view('layout.index');
+        return view('layout.index');
     }
     public function gioithieu(){
-    	return view('layout.intro');
+        return view('layout.intro');
     }
     public function blog(){
-    	return view('layout.blog');
+        return view('layout.blog');
     }
-    public function sanpham(){
-    	return view('layout.product');
+    public function sanpham($id){
+        $chitietsp=sanpham::find($id);
+        $sanpham=sanpham::all();
+        $spcungloai=sanpham::where('idLoaiSP',$chitietsp->idLoaiSP)->take(4)->get();
+        return view('layout.product',['chitietsp'=>$chitietsp,'spcungloai'=>$spcungloai]);
     }
     public function sanphamchobe(){
         return view('layout.productChild');

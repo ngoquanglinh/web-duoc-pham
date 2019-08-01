@@ -77,6 +77,12 @@
 	line-height: 60px;
 	padding-left: 15px;
 }
+.menu-menu .open>.dropdown-menu{
+	background-color: #75b239;
+}
+.menu-menu .open>.dropdown-menu:hover{
+	background-color:#61a024;
+}
 .dropdown-toggle{
 	color: #ffffff;
 	height: 60px;
@@ -126,8 +132,6 @@
 	margin:0px;
 	padding:0px; 
 	position: relative;
-}
-.slide img{
 }
 .sanpham-slide-Breadcrumbs{
 	position:absolute;
@@ -198,10 +202,6 @@
 .content-sanpham{
 	margin-top: 67px;
 }
-.content-sanpham img{
-	max-height: 246px;
-
-}
 .content-gioithieu-tittle{
 	margin-top: 10%;
 	border-radius: 20%;
@@ -247,8 +247,6 @@
 	text-align: center;
 	font-size: 21px;
 	color: #393b39;
-}
-.content-banner {
 }
 .content-banner img{
 	width: 100%;
@@ -333,6 +331,9 @@
 .content-sanpham-show{
 	margin-top: 50px;
 }
+.content-sanpham-show a:hover{
+	text-decoration: none;
+}
 .thumbnail h3{
 	text-align: center;
 }
@@ -342,7 +343,6 @@
 	color: #75b239;
 }
 .thumbnail img{
-	max-width: 115px;
 	height: 200px;
 	overflow: hidden;
 }
@@ -428,15 +428,15 @@ p.content-admin-profile-p{
 	text-align: center;
 }
 .thumbnail-logo img{
-	width:100%;
-	height:150px;
+	width:70%;
+	height:100px;
 }
 .tab-content a:hover{
 	text-decoration: none;
 }
 /*ket thuc content*/
 .footer{
-	margin-top: 40%;
+	margin-top: 25%;
 	position: relative;
 }
 .footer-form{
@@ -570,9 +570,8 @@ p.content-admin-profile-p{
 	color: #6ba335!important;
 }
 .footer-footer{
-	height: 94px;
+	height: 100%px;
 	border-top: 1px solid #303541;
-	margin-top: 120px;
 	display: flex;
 }
 .footer-footer-left{
@@ -591,7 +590,7 @@ p.content-admin-profile-p{
 	padding-left: 5px; 
 }
 .footer-footer-right i:nth-child(1){
-	color: #16a7b9;315bd6
+	color: #16a7b9;
 } 
 .footer-footer-right i:nth-child(2){
 	color:#315bd6;
@@ -757,16 +756,26 @@ ket thuc css trang chu va bat dau css trang gioithieu
 .content-sanpham{
 	margin-top: 100px;
 }
-.sanpham-img img{
-	width: 100%;
-	max-height: 600px;
-}
 .sanpham-tittle{
 	font-size: 36px;
 	color: #2b2b2b;
 }
 .sanpham-start i{
 	color: #f5b313;
+}
+.content-loaisanpham{
+	padding-top: 10%;;
+}
+.content-loaisanpham .thumbnail{
+	width: 100%;
+	height: 500px;
+}
+.content-loaisanpham .thumbnail img{
+	height:50%;
+	display: block;
+	margin-top: 20%;
+ 	margin-left: auto;
+ 	margin-right: auto;
 }
 .sanpham-start{
 	padding:10px 0 5px 0; 
@@ -817,10 +826,16 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	background-color: #75b239;
 	margin-left: 30px;
 }
+.sanpham-cart:hover{
+	background-color: #61a024;
+}
 .sanpham-cart p{
 	color: #ffffff;
 	text-align: center;
 	line-height: 45px;
+}
+.sanpham-form a:hover{
+	text-decoration: none;
 }
 .sanpham-share{
 	display: flex;
@@ -880,7 +895,6 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .sanpham-ifram{
 	margin-top: 20px;
-	width: 80%;
 	margin-bottom: 40px;
 }
 .sanpham-group h3{
@@ -1120,7 +1134,7 @@ ket thuc css trang chu va bat dau css trang gioithieu
 .giohang-image{
 	display: flex;
 	position: relative;
-	padding-left: 40px;
+	padding-left: 10%;
 }
 .giohang-image i{
 	position: absolute;
@@ -1133,6 +1147,11 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	margin-left: 10px;
 	font-size: 18px;
 	color: #000000;
+}
+.giohang-image  img{
+	width: 30%;
+	height: 80%;
+	padding-top: 10%;
 }
 .edit-row-table p{
 	padding-top: 40px;
@@ -1220,6 +1239,9 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	max-width: 100%;
 	margin:  0 auto;
 }
+.thanhtoan-redirect a:hover{
+	text-decoration: none;
+}
 .btnthanhtoan{
 	margin-top: 25px;
 	margin-bottom: 25px;
@@ -1229,7 +1251,6 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .pay-left{
 	width: 100%;
-	height: 500px;
 	border: 1px solid #d3d3d3;
 }
 .pay-right{
@@ -1295,6 +1316,13 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	border-radius: 25px;
 	background-color: #75b239;
 	text-align:center;
+}
+.dathang button{
+	line-height: 297%;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
 }
 .dathang a{
 	color: #ffffff;
