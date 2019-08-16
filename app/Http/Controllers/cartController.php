@@ -8,8 +8,14 @@ use App\sanpham;
 use App\khachhang;
 use App\hoadon;
 use App\chitiethoadon;
+use App\slide;
 class cartController extends Controller
 {
+      function __construct(){
+        $cartCollection = Cart::getContent();
+        $cartcount=$cartCollection->count();
+        view()->share('cartcount',$cartcount);
+    }
     public  function getAddCart($id){
         $sanpham=sanpham::find($id);
         if($sanpham->SPKhuyenMai == 1){
@@ -102,5 +108,27 @@ class cartController extends Controller
         $idhd=hoadon::where('id',$hoadon->id)->first();
         return view('layout.payCompleted',['idhd'=>$idhd]);
         // ->with('thongbao','Đặt Hàng Thành Công');
+    }
+    public function getSlideAddCart($id){
+        $slide=slide::find($id);
+        if($slide->SPKhuyenMai == 1){
+            Cart::add(array(
+                'id' =>$id,
+                'name' =>$slide->TenSlide,
+                'price' =>$slide->GiaKhuyenMai,
+                'quantity' =>1,
+                'attributes' => array('img'=>$slide->link)
+            )); 
+        }
+        else{
+            Cart::add(array(
+                'id' =>$id,
+                'name' =>$slide->TenSlide,
+                'price' =>$slide->Gia,
+                'quantity' =>1,
+                'attributes' => array('img'=>$slide->link)
+            )); 
+        }
+        return redirect('cart/show');
     }
 }

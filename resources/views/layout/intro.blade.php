@@ -175,40 +175,38 @@
 					<!--  -->
 				</div>
 			</div>
-			<div class="row hidden-xs">
-				<div class="container-fluid">
-					<div class="row thumbnail-logo">
-						<div class="col-md-2">
-							<a href="#" class="thumbnail">
-								<img src="uploads/6.jpg" alt="...">
-							</a>
-						</div>
-						<div class="col-md-2">
-							<a href="#" class="thumbnail">
-								<img src="uploads/logo1.jpg" alt="...">
-							</a>
-						</div>
-						<div class="col-md-2">
-							<a href="#" class="thumbnail">
-								<img src="uploads/2.jpg" alt="...">
-							</a>
-						</div>
-						<div class="col-md-2">
-							<a href="#" class="thumbnail">
-								<img src="uploads/3.jpg" alt="...">
-							</a>
-						</div>
-						<div class="col-md-2">
-							<a href="#" class="thumbnail">
-								<img src="uploads/7.jpg" alt="...">
-							</a>
-						</div>
-						<div class="col-md-2">
-							<a href="#" class="thumbnail">
-								<img src="uploads/5.jpg" alt="...">
-							</a>
-						</div>
-					</div>
+			<div class="row">
+	<div class="container-fluid">
+		<div id="carousel-example-generica" class="carousel slide" data-ride="carousel">
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">	
+					@foreach($doitac1 as $dt)
+					<div class="col-md-2 col-xs-4  thumbnail-logo">
+						<a href="#" class="thumbnail">
+							<img src="uploads/{{$dt->anh}}" alt="..." class="img-responsive" class="brand-logo"> 
+						</a>
+					</div>	
+					@endforeach
+				</div>
+				<div class="item">
+					@foreach($doitac2 as $dt2)
+					<div class="col-md-2 col-xs-4  thumbnail-logo">
+						<a href="#" class="thumbnail">
+							<img src="uploads/{{$dt2->anh}}" alt="..." class="img-responsive" class="brand-logo"> 
+						</a>
+					</div>	
+					@endforeach
 				</div>
 			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generica" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generica" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+	</div>
+</div>
 			@endsection

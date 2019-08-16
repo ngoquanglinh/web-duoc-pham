@@ -95,7 +95,7 @@
 									@foreach($items as $item)						
 										<span style="font-size:18px;color:black">{{$item->name}}</span>				
 										<span style="font-size:18px;color:black;float:right">{{number_format($item->price,0,
-												",",".")}}</span>	
+												",",".")}}đ</span>	
 									<hr>
 									@endforeach
 								</div>
@@ -107,10 +107,10 @@
 									</div>
 									<div class="pay-donhang-right">
 										<p>{{number_format($total,0,
-												",",".")}}</p>
+												",",".")}}đ</p>
 										<p>0đ</p>
 										<p>{{number_format($total,0,
-												",",".")}}</p>
+												",",".")}}đ</p>
 									</div>
 								</div>
 								<div>
@@ -130,7 +130,7 @@
 											</div>
 										</div>
 									<div class="dathang">
-										<button type="submit" style="">Đặt Hàng</button>
+										<button type="submit">Đặt Hàng</button>
 									</div>
 								</div>
 							</div>

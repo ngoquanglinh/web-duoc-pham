@@ -16,10 +16,10 @@
 </div>
 <!--ket thúc slide  -->
 <div class="container">
-	<div class="row content-loaisanpham">
+	<div class="content-loaisanpham">
 		<div class="col-md-12 col-xs-12">
 			<div class="row">
-				<div class="col-md-6 col-xs-12 sanpham-img">
+				<div class="col-md-6 col-xs-12 sanpham">
 					<div class="thumbnail">
 						<img src="uploads/{{$chitietsp->ImageSP}}" class="img-responsive" alt="" class="rv">
 					</div>
@@ -105,40 +105,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12 col-xs-12">
-					{{-- <div class="sanpham-gioithieu">
-						<p>Cơ thể bạn thường xuyên bị suy nhược và mệt mỏi? Bạn muốn bổ sung các  vitamin và khoáng chất cho cơ thể?  Bạn đang tìm một loại thực phẩm có thể cung cấp các vitamin cần thiết cho cơ thể? Sản phẩm vitafusion MultiVites 250 viên – Kẹo dẻo cung cấp vitamin sẽ giúp bạn.</p>
-					</div>
-					<div class="sanpham-gioithieu">
-						<h4>Tác dụng chính của vitamin đối với cơ thể là gì?</h4>
-					</div>
-					<div class="sanpham-gioithieu">
-						<i class="fas fa-check"></i><span>Tổng hợp đầy đủ các vitamin B12, B6, Axit folic và axit pantothenic</span><br>
-						<i class="fas fa-check"></i><span>Tăng cường khả năng hấp thụ các chất dinh dưỡng cho cơ thể</span><br>
-						<i class="fas fa-check"></i><span>Tăng khả năng chống loãng xương và bôi trơn khớp</span><br>
-						<i class="fas fa-check"></i><span>Tăng cường thị lực,bảo vệ đôi mắt trong lúc dùng máy tính</span><br>
-						<i class="fas fa-check"></i><span>Giúp da, xương và các mô liên kết luôn khỏe mạnh</span><br>
-						<i class="fas fa-check"></i><span>Tăng cường hệ thống miễn dịch cho cơ thể</span><br>
-						<i class="fas fa-check"></i><span>Tái tạo làn da, phục hồi tóc hư tổn, móng chắc khỏe</span><br>
-					</div>
-					<div class="sanpham-gioithieu">
-						<h4>HƯỚNG DẪN SỬ DỤNG KHI BỔ SUNG VITAMIN VITAFUSION MULTIVITES CHO CƠ THỂ:</h4>
-					</div>
-					<div class="sanpham-gioithieu">
-						<p>Trẻ em đủ 4 tuổi trở lên, dùng 1-2 viên/ ngày.</p>
-						<p>Người lớn, dùng 2 viên/ ngày.</p>
-						<p>Không được sử dụng ở trẻ em dưới 2 tuổi nếu không được tư vấn y tế.</p>
-					</div class="sanpham-gioithieu">
-					<div>
-						<h4>LƯU Ý KHI BỔ SUNG VITAMIN CHO CƠ THỂ:</h4>
-					</div>
-					<div class="sanpham-gioithieu">
-						<p>Dùng cho người lớn và trẻ em từ 4 tuổi trở lên.</p>
-						<p>Nếu bạn đang điều trị bệnh, đang dùng thuốc hoặc đang mang thai, cho con bú hãy hỏi ý kiến bác sĩ trước khi sử dụng.</p>
-						<p>Tránh tiếp xúc với nhiệt độ quá cao và độ ẩm. Màu sắc tự nhiên sẽ sẫm theo thời gian. Nhưng vẫn không làm thay đổi hiệu quả của sản phẩm.</p>
-						<p>Không được dùng quá liều.</p>
-						<p>Nếu niêm phong của sản phẩm bị rách, hoặc mất, không nên sử dụng.</p>
-					</div> --}}
+				<div class="col-md-12 col-xs-12">	
 					<div style="padding:2%; font-size:16px;">
 						{!!$chitietsp ->MoTa!!}
 					</div>
@@ -151,10 +118,11 @@
 					<div class="sanpham-group">
 						<h3>Các sản phẩm liên quan</h3>
 					</div>
-					<div class="row">
+					<div class="row spcl">
 					@foreach($spcungloai as $spcl)
 					<div class="col-md-3 col-xs-6">
-					<div class="thumbnail">
+					<a href="sanpham/{{$spcl->id}}" title="">
+					<div class="thumbnail splq">
 							<img src="uploads/{{$spcl->ImageSP}}" alt="sanpham">
 								<div class="caption">
 								<h3>{{$spcl->TenSP}}</h3>
@@ -175,6 +143,7 @@
 						</div>
 						@endforeach
 					</div>
+				</a>
 				</div>
 			</div>
 		</div>

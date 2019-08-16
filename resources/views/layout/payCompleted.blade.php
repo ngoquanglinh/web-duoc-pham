@@ -45,7 +45,7 @@
 									<br>
 									@foreach($idhd->chitiethoadon as $hd)
 										<span style="font-size:18px;color:black">{{$hd->sanpham->TenSP}}</span>
-										<span style="font-size:18px;color:black;float:right">{{number_format($hd->DonGia,0,",",".")}}</span>
+										<span style="font-size:18px;color:black;float:right">{{number_format($hd->DonGia,0,",",".")}}đ</span>
 									<hr>
 									@endforeach
 								</div>
@@ -57,10 +57,10 @@
 										<p>Tổng cộng:</p>
 									</div>
 									<div class="pay-donhang-right">
-										<p>{{number_format($idhd->TongTien,0,",",".")}}</p>
+										<p>{{number_format($idhd->TongTien,0,",",".")}}đ</p>
 										<p>Miễn phí</p>
 										<p>{{$idhd->ThanhToan}}</p>
-										<p>{{number_format($idhd->TongTien,0,",",".")}}</p>
+										<p>{{number_format($idhd->TongTien,0,",",".")}}đ</p>
 									</div>
 								</div>
 								<div class="pay-chuy">
@@ -73,16 +73,22 @@
 							<div class="pay-completed">
 								<h4>Cám ơn bạn đã mua hàng ! Đơn đặt hàng của bạn đã được nhận</h4>
 								<div class="pay-completed-cart">
+									<i class="fas fa-check"></i><span><b>Khách Hàng :</b>{{$idhd->khachhang->Ten}}</span>
+								</div>
+								<div class="pay-completed-cart">
+									<i class="fas fa-check"></i><span><b>Địa Chỉ:</b>{{$idhd->khachhang->DiaChi}}</span>
+								</div>
+								<div class="pay-completed-cart">
 								<i class="fas fa-check"></i><span><b>Mã đơn hàng: </b>{{$idhd->id}}</span>
 								</div>
 								<div class="pay-completed-cart">
 									<i class="fas fa-check"></i><span><b>Ngày đặt hàng: </b>{{$idhd->NgayDat}}</span>
 								</div>
 								<div class="pay-completed-cart">
-									<i class="fas fa-check"></i><span><b>Tổng cộng: </b>{{number_format($idhd->TongTien,0,",",".")}}</span>
+									<i class="fas fa-check"></i><span><b>Tổng cộng: </b>{{number_format($idhd->TongTien,0,",",".")}}đ</span>
 								</div>
 								<div class="pay-completed-cart">
-									<i class="fas fa-check"></i><span><b>Phương thức thanh toán: </b>{{$idhd->ThanhToan}}</span>
+									<i class="fas fa-check"></i><span><b>Phương thức thanh toán: </b>{{$idhd->ThanhToan}}đ</span>
 								</div>
 							</div>
 						</div>

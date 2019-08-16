@@ -6,44 +6,47 @@
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-				<div class="item active">
-					<img src="uploads/banner1.jpg" alt="banner" class="img-responsive">
-					<div class="home-slide-text">
-						<p><del>59.000 vnđ</del></p>
-						<p>39.000 vnđ</p>
-					</div>
-					<div class="home-slide-btn">
-						<a href="" title=""><p>Thêm Vào Giỏ Hàng</p></a>
-					</div>
+				<?php $i=0; ?>
+				@foreach($slide as $sl)
+				<div 
+				@if($i==0)
+				class="item active">
+				@else
+				class="item">
+				@endif
+				<img src="uploads/{{$sl->link}}" alt="banner" class="img-responsive">
+				<div class="home-slide-text">
+					@if($sl->SPKhuyenMai==1)
+					<p><del>{{number_format($sl->GiaKhuyenMai,0,",",".")}} vnđ</del></p>
+					<p>{{number_format($sl->Gia,0,",",".")}}</p>
+					@else
+					<p>{{number_format($sl->Gia,0,",",".")}}</p>
+					@endif
 				</div>
-				<div class="item">
-					<img src="uploads/banner1.jpg" alt="banner"  class="img-responsive">
-					<div class="home-slide-text">
-						<p><del>59.000 vnđ</del></p>
-						<p>39.000 vnđ</p>
-					</div>
-					<div class="home-slide-btn">
-						<a href="" title=""><p>Thêm Vào Giỏ Hàng</p></a>
-					</div>
+				<div class="home-slide-btn">
+					<a href="cart/slide/add/{{$sl->id}}" title=""><p>Thêm Vào Giỏ Hàng</p></a>
 				</div>
 			</div>
-
-			<!-- Controls -->
-			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a>
-			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
+			<?php $i++; ?>
+			@endforeach
 		</div>
-	</div>  
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+</div>  
 </div>
 <!-- ket thuc slide -->
 
 <div class="content">
 	<div class="container-fluid container-fluid-top">
 		<div class="container">
-			<div class="row content-sanpham">
+			<div class="row content-sanpham hidden-xs">
 				<div class="col-md-6 col-xs-12 content-sanpham-show1">
 					<img src="uploads/khuyenmai1.jpg" alt="khuyen mai"  class="img-responsive">
 				</div>
@@ -96,6 +99,14 @@
 				<div class="col-md-12">
 					<img src="uploads/banner2.jpg" alt="banner2">
 				</div>
+				<div class="camket">
+					<h2>Tại sao khách hàng tin tưởng chúng tôi?</h2>
+					<div class="gachngang">
+						
+					</div>
+					<p>FGC cung cấp các dược liệu chiết xuất từ thiên nhiên tốt cho sức khỏe là đối tác tin cậy cho mọi nhà</p>
+					<i class="far fa-play-circle"></i><span>Xem video</span>
+				</div>
 			</div>
 			<!--  -->
 			<div class="row col-md-12 col-xs-12 content-gioithieu-tittle">
@@ -117,8 +128,8 @@
 					@foreach($loaisp as $lsp)
 					@if($i == 0)
 					<li class="active">
-						<div class="li-active">
-							<a href="#spmoi" role="tab" data-toggle="tab">{{$lsp->TenLoaiSP}}</a>
+						<div class="li-active" id="product-bg">
+							<a href="#spmoi" role="tab" data-toggle="tab" onclick=" changebg('product-bg','product-bg-child','product-bg-mom','js-spmoi','js-spbe','js-spme')" id="js-spmoi">{{$lsp->TenLoaiSP}}</a>
 						</div>
 					</li>	
 					@endif
@@ -129,14 +140,14 @@
 					@foreach($loaisp as $lsp)
 					@if($j == 1)
 					<li>
-						<div class="li-sp">
-							<a href="#spme"role="tab" data-toggle="tab">{{$lsp->TenLoaiSP}}</a>
+						<div class="li-sp" id="product-bg-mom">
+							<a href="#spme"role="tab" data-toggle="tab" id="js-spme" onclick=" changebg('product-bg-mom','product-bg-child','product-bg','js-spme','js-spbe','js-spmoi')">{{$lsp->TenLoaiSP}}</a>
 						</div>
 					</li>
 					@elseif($j==2)	
 					<li>
-						<div class="li-sp">
-							<a href="#spbe"role="tab" data-toggle="tab">{{$lsp->TenLoaiSP}}</a>
+						<div class="li-sp" id="product-bg-child">
+							<a href="#spbe"role="tab" data-toggle="tab" id="js-spbe" onclick="changebg('product-bg-child','product-bg-mom','product-bg','js-spbe','js-spme','js-spmoi')">{{$lsp->TenLoaiSP}}</a>
 						</div>
 					</li>
 					@endif
@@ -190,7 +201,7 @@
 					<div class="tab-pane" id="spme">
 						<div class="row">
 							<div class="col-md-12 col-xs-12 height-thumbnail">
-								<div class="row">
+								<div class="">
 									@foreach($loaisp as $lsp)
 									<?php 
 									$data2=$lsp->sanpham->where('idLoaiSP',2)->sortByDesc('created_at')->take(8);
@@ -279,15 +290,10 @@
 			</div>	
 		</div>
 		<!--  -->
-		{{-- <div class="row content-sanpham-more">
-			<div class="content-sanpham-more-btn">
-				<p>Xem Thêm</p>
-			</div>
-		</div> --}}
 		<!--  -->
 		<div class="row">
 			<div class="col-md-12 col-xs-12">
-				<div class="row col-md-12 col-xs-12 content-gioithieu-tittle">
+				<div class="content-gioithieu-tittle">
 					<div >
 						<h1>
 							Niềm tin của khách hàng
@@ -362,43 +368,58 @@
 <!--  -->
 <div class="row">
 	<div class="container-fluid">
-		<div class="row thumbnail-logo">
-			<div class=" col-md-12 col-xs-12">
-				<div class="col-md-2 col-xs-4">
-					<a href="#" class="thumbnail">
-						<img src="uploads/6.jpg" alt="..." class="img-responsive" class="brand-logo"> 
-					</a>
+		<div id="carousel-example-generica" class="carousel slide" data-ride="carousel">
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">	
+					@foreach($doitac1 as $dt)
+					<div class="col-md-2 col-xs-4  thumbnail-logo">
+						<a href="#" class="thumbnail">
+							<img src="uploads/{{$dt->anh}}" alt="..." class="img-responsive" class="brand-logo"> 
+						</a>
+					</div>	
+					@endforeach
 				</div>
-				<div class="col-md-2 col-xs-4">
-					<a href="#" class="thumbnail">
-						<img src="uploads/logo1.jpg" alt="..." class="img-responsive">
-					</a>
-				</div>
-				<div class="col-md-2 col-xs-4">
-					<a href="#" class="thumbnail">
-						<img src="uploads/2.jpg" alt="..." class="img-responsive">
-					</a>
-				</div>
-				<div class="col-md-2 col-xs-4">
-					<a href="#" class="thumbnail">
-						<img src="uploads/3.jpg" alt="..." class="img-responsive">
-					</a>
-				</div>
-				<div class="col-md-2 col-xs-4">
-					<a href="#" class="thumbnail">
-						<img src="uploads/7.jpg" alt="..." class="img-responsive">
-					</a>
-				</div>
-				<div class="col-md-2 col-xs-4">
-					<a href="#" class="thumbnail">
-						<img src="uploads/5.jpg" alt="..." class="img-responsive">
-					</a>
+				<div class="item">
+					@foreach($doitac2 as $dt2)
+					<div class="col-md-2 col-xs-4  thumbnail-logo">
+						<a href="#" class="thumbnail">
+							<img src="uploads/{{$dt2->anh}}" alt="..." class="img-responsive" class="brand-logo"> 
+						</a>
+					</div>	
+					@endforeach
 				</div>
 			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generica" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generica" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
 		</div>
 	</div>
 </div>
 </div>
 </div>
+<script>
+	function changebg(x,y,l,z,v,m) {
+		var a1=document.getElementById(x);
+		var a2=document.getElementById(y);
+		var a3=document.getElementById(l);
+		var a4=document.getElementById(z);
+		var a5=document.getElementById(v);
+		var a6=document.getElementById(m);
+		a1.style.backgroundColor="#75b239";
+		a2.style.background="none";
+		a3.style.background="none";
+		a4.style.color="#ffffff";
+		a5.style.color="black";
+		a6.style.color="black";	
+	}
+</script>
 <!-- ket thuc content -->
+@section('script')
+
+@endsection
 @endsection	

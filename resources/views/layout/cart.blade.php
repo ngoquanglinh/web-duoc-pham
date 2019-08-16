@@ -53,16 +53,16 @@
 							<td class="edit-row-table"><input type="number" name="" value="{{$item->quantity}}" onchange="updateCart(this.value,'{{$item->id}}')"></td>
 							<td class="edit-row-table">
 								<p>{{number_format($item->price,0,
-							",",".")}}</p>
+							",",".")}}đ</p>
 							</td>
 								<td class="edit-row-table"><p>{{number_format($item->price*$item->quantity,0,
-										",",".")}}</p></td>
+										",",".")}}đ</p></td>
 							</tr>
 							@endforeach
 							<tr>
-								<td colspan="4">
+								<td colspan="4" class="text-center">
 									<div class="giohang-redirect">
-										<a href="TrangChu" title="">
+										<a href="TrangChu" title="" style="padding-right: 2%">
 											<div class="giohang-btn-active">
 												Tiếp tục xem sản phẩm
 											</div>
@@ -73,7 +73,7 @@
 											</div>
 										</a>
 									</div>
-								</td>
+								</td>		
 							</tr>
 						</table>
 						<div class="giohang-sum">
@@ -85,15 +85,15 @@
 									<p>Tổng cộng:</p>
 								</div>
 								<div class="giohang-addres-right">
-									<p>{{number_format($total,0,",",".")}}</p>
+									<p>{{number_format($total,0,",",".")}}đ</p>
 									<p>Số 19 Trần Huy Liệu - Tp.Vinh - Nghệ An</p>
-									<p>{{number_format($total,0,",",".")}}</p>
+									<p>{{number_format($total,0,",",".")}}đ</p>
 								</div>
 							</div>
 						</div>
 						<div class="thanhtoan-redirect">
 							<a href="cart/pay">
-							<div class="giohang-btn-active btnthanhtoan">
+							<div class=" btnthanhtoan">
 								Tiến hành thanh toán
 							</div>
 							</a>

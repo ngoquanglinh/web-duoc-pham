@@ -22,7 +22,7 @@ class SanPhamController extends Controller
     {
         $this->validate($request,
         [
-            'tensp'=>'required|min:3|max:100|unique:sanpham,TenSP',
+            'tensp'=>'required|min:3|max:100',
             'gia'=>'required',
             'video'=>'required',
             'mota'=>'required',
@@ -33,7 +33,6 @@ class SanPhamController extends Controller
             'tensp.required'=>'Bạn chưa nhập tên sản phẩm',
             'tensp.max'=>'Tên loại sản phẩm từ 3 đến 100 ký tự',
             'tensp.min'=>'Tên loại sản phẩm từ 3 đến 100 ký tự',
-            'tensp.unique'=>'Tên sản phẩm đã  tồn tại',
             'gia.required'=>'Bạn chưa nhập giá',
             'mota.required'=>'Bạn chưa thêm mô tả',
             'motangan.required'=>'Bạn chưa thêm mô tả ngắn',
@@ -62,7 +61,7 @@ class SanPhamController extends Controller
             $name=$file->getClientOriginalName();
             $hinh=str_random(4)."_".$name;
             $file->move("uploads",$hinh);
-            // unlink("uploads/".$sanpham->ImageSP);
+            unlink("uploads/".$sanpham->ImageSP);
             $sanpham->ImageSP=$hinh;
             }
         $sanpham->save();

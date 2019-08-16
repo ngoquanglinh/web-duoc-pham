@@ -17,50 +17,27 @@
 		<div class="container">
 			<div class="row content-blog">
 				<div class="col-md-9 col-xs-12">
+					@foreach($tintuc as $tt)
 					<div class="row">
 						<div class="col-md-12 col-xs-12 blog-left-danhsach">
 							<ul>
-								<li><img src="uploads/blog1.jpg" alt="me cho con sua" class="img-responsive"></li>
-								<li>Thứ 6, 20-12-2018 /By Admin FGC</li>
-								<li>Các loại sữa cho mẹ sau sinh bổ sung dinh dưỡng</li>
-								<li>Nếu lượng khoáng chất mà mẹ sau sinh lấy vào thường sắt và canxi thấp, thì cơ thể sẽ dùng lượng dữ trự để đảm bảo chất lượng sữa mẹ. Điều này tất nhiên là dẫn tới việc tiêu thụ hết lượng dự trữ có được trong thời kì....<a href="" title=""><span>[ Đọc thêm ]</span></a>
+								<li><img src="uploads/{{$tt->Anh}}" alt="me cho con sua" class="img-responsive">
+								</li>
+								<li style="color: #75b239">{{$tt->NgayDang}}/By {{$tt->NguoiDang}}
+								</li>
+								<a href="blog/chitiet/{{$tt->id}}" style="color: #75b239;font-size: 20px">
+									<li>{{$tt->TenTT}}</li>
+								</a>
+								<li style="padding: 0px!important">
+									{!!$tt->TomTat!!}
 								</li>
 							</ul>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12 col-xs-12 blog-left-danhsach">
-							<ul>
-								<li><img src="uploads/blog2.jpg" alt="me cho con sua" class="img-responsive"></li>
-								<li>Thứ 6, 20-12-2018    /    By Admin FGC</li>
-								<li>Chia sẻ thực đơn cho mẹ sau sinh nhiều sữa</li>
-								<li>Nếu lượng khoáng chất mà mẹ sau sinh lấy vào thường sắt và canxi thấp, thì cơ thể sẽ dùng lượng dữ trự để đảm bảo chất lượng sữa mẹ. Điều này tất nhiên là dẫn tới việc tiêu thụ hết lượng dự trữ có được trong thời kì.... <a href="" title=""><span>[ Đọc thêm ]</span></a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 col-xs-12 blog-left-danhsach">
-							<ul>
-								<li><img src="uploads/blog5.jpg" alt="me cho con sua" class="img-responsive"></li>
-								<li>Thứ 6, 20-12-2018    /    By Admin FGC</li>
-								<li>Cẩm nang cần thiết cho bà bầu đang mang thai và sau sinh</li>
-								<li>Nếu lượng khoáng chất mà mẹ sau sinh lấy vào thường sắt và canxi thấp, thì cơ thể sẽ dùng lượng dữ trự để đảm bảo chất lượng sữa mẹ. Điều này tất nhiên là dẫn tới việc tiêu thụ hết lượng dự trữ có được trong thời kì.... <a href="" title=""><span>[ Đọc thêm ]</span></a>
-								</li>
-							</ul>
-						</div>
-					</div>
+					@endforeach
 					<!--  -->
 					<div class="row">
-						<ul class="pagination blog-phantrang">
-							<li><a href="#">&laquo;</a></li>
-							<li><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&raquo;</a></li>
-						</ul>
+						
 					</div>
 				</div>
 				<!-- ket thuc left -->
@@ -81,25 +58,15 @@
 								<h3>Bài viết đọc nhiều</h3>
 							</div>
 							<div class="row blog-right-danhsach-active">
+								@foreach($xemnhieu as $xn)
 								<ul>
-									<li><img src="uploads/blog4.jpg" alt="uong sua nao" class="img-responsive"></li>
-									<li>Các loại sữa cho mẹ sau sinh bổ sung dinh dưỡng</li>
-									<li>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs.</li>
+									<li><img src="uploads/{{$xn->Anh}}" alt="uong sua nao" class="img-responsive"></li>
+									<a href="blog/chitiet/{{$tt->id}}" style="color: #75b239;font-size: 20px">
+									<li>{{$xn->TenTT}}</li>
+									</a>
+									<li>{!!$xn->TomTat!!}</li>
 								</ul>
-							</div>
-							<div class="row blog-right-danhsach">
-								<ul>
-									<li><img src="uploads/blog4.jpg" alt="uong sua nao" class="img-responsive"></li>
-									<li>Các loại sữa cho mẹ sau sinh bổ sung dinh dưỡng</li>
-									<li>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs.</li>
-								</ul>
-							</div>
-							<div class="row blog-right-danhsach">
-								<ul>
-									<li><img src="uploads/blog4.jpg" alt="uong sua nao" class="img-responsive"></li>
-									<li>Các loại sữa cho mẹ sau sinh bổ sung dinh dưỡng</li>
-									<li>Ut cursus massa at urnaaculis estie. Sed aliquamellus vitae ultrs.</li>
-								</ul>
+								@endforeach
 							</div>
 						</div>
 					</div>
@@ -108,4 +75,15 @@
 			</div>
 		</div>
 		<!-- ket thuc content -->
+		<script type="text/javascript">
+		function count(id,count){
+		$.get(
+			'{{asset('countNews/update')}}',
+			{id:id},
+			function(){
+				location.reload();
+			}
+		);
+	}
+</script>
 @endsection('main')

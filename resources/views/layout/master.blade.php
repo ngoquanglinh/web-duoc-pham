@@ -16,5 +16,6 @@
 	@include('layout.header')
 	@yield('main')
 	@include('layout.footer')
+	@yield('script')
 </body>
 </html>

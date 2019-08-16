@@ -19,18 +19,31 @@
 		<div class="container">
 			<div class="row contact">
 				<div class="col-md-8 col-xs-12 table-responsive">
-					<form action="" method="">
+					@if(count($errors) > 0)
+						<div class="alert alert-danger">
+							@foreach($errors->all() as $err)
+								{{$err}}<br>
+							@endforeach
+						</div>
+						@endif
+						@if(session('thongbao'))
+							<div class="alert alert-success">
+								{{session('thongbao')}}<br>
+							</div>
+						@endif
+					<form action="lienhe/them" method="POST">
+						@csrf
 						<table class="table">
 							<tr>
-								<td class="contact-td1"><input type="text" name="" placeholder="Họ và tên"></td>
-								<td class="contact-td2"><input type="text" name="" placeholder="Số điện thoại"></td>
+								<td class="contact-td1"><input type="text" name="name" placeholder="Họ và tên"></td>
+								<td class="contact-td2"><input type="text" name="phone" placeholder="Số điện thoại"></td>
 							</tr>
 							<tr>
-								<td class="contact-td1"><input type="text" name="" placeholder="Tin nhắn"></td>
-								<td class="contact-td2"><input type="text" name="" placeholder="Chủ đề"></td>
+								<td class="contact-td1"><input type="email" name="email" placeholder="Email"></td>
+								<td class="contact-td2"><input type="text" name="chude" placeholder="Chủ đề"></td>
 							</tr>
 							<tr>
-								<td colspan="2"><textarea name=""rows="10" placeholder="   Tin nhắn"></textarea></td>
+								<td colspan="2"><textarea name="noidung" rows="10" placeholder="   Tin nhắn"></textarea></td>
 							</tr>
 							<tr>
 								<td class="text-center">

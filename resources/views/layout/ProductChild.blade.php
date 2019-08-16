@@ -36,22 +36,22 @@
 					<div>
 						<img src="uploads/spbe.png" class="img-responsive" alt="">
 					</div>
-					<div class="sp-icon-active">
+					<div class="sp-icon-active hidden-xs">
 						<div>
 							<p>Không chất bảo quản, an toàn</p>
 						</div>
 					</div>
-					<div class="sp-icon1">
+					<div class="sp-icon1 hidden-xs">
 						<div>
 							<p>Hiệu quả khi sử dụng thường xuyên</p>
 						</div>
 					</div>
-					<div class="sp-icon2">
+					<div class="sp-icon2 hidden-xs">
 						<div>
 							<p>Không tác dụng phụ vs sức khỏe</p>
 						</div>
 					</div>
-					<div class="sp-icon3">
+					<div class="sp-icon3 hidden-xs">
 						<div>
 							<p>100% Thảo dược hữu cơ</p>
 						</div>
@@ -182,42 +182,40 @@
 			</div>
 		</div>
 		<!--  -->
-		<div class="row hidden-xs">
-			<div class="container-fluid">
-				<div class="row thumbnail-logo">
-					<div class="col-md-2">
+		<div class="row">
+	<div class="container-fluid">
+		<div id="carousel-example-generica" class="carousel slide" data-ride="carousel">
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">	
+					@foreach($doitac1 as $dt)
+					<div class="col-md-2 col-xs-4  thumbnail-logo">
 						<a href="#" class="thumbnail">
-							<img src="uploads/6.jpg" alt="..." class="img-responsive">
+							<img src="uploads/{{$dt->anh}}" alt="..." class="img-responsive" class="brand-logo"> 
 						</a>
-					</div>
-					<div class="col-md-2">
+					</div>	
+					@endforeach
+				</div>
+				<div class="item">
+					@foreach($doitac2 as $dt2)
+					<div class="col-md-2 col-xs-4  thumbnail-logo">
 						<a href="#" class="thumbnail">
-							<img src="uploads/logo1.jpg" alt="..." class="img-responsive">
+							<img src="uploads/{{$dt2->anh}}" alt="..." class="img-responsive" class="brand-logo"> 
 						</a>
-					</div>
-					<div class="col-md-2">
-						<a href="#" class="thumbnail">
-							<img src="uploads/2.jpg" alt="..." class="img-responsive">
-						</a>
-					</div>
-					<div class="col-md-2">
-						<a href="#" class="thumbnail">
-							<img src="uploads/3.jpg" alt="..." class="img-responsive">
-						</a>
-					</div>
-					<div class="col-md-2">
-						<a href="#" class="thumbnail">
-							<img src="uploads/7.jpg" alt="..." class="img-responsive">
-						</a>
-					</div>
-					<div class="col-md-2">
-						<a href="#" class="thumbnail">
-							<img src="uploads/5.jpg" alt="..." class="img-responsive">
-						</a>
-					</div>
+					</div>	
+					@endforeach
 				</div>
 			</div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel-example-generica" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generica" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
 		</div>
+	</div>
+</div>
 	</div>
 </div>
 @endsection

@@ -51,7 +51,9 @@
 }
 .header-lienhe i{
 	color: #85af4b;
-	padding:44px 70px 44px 0;
+	/*padding:44px 70px 44px 0;*/
+	padding: 2%;
+	padding-top: 15%;
 }
 /*ket thuc header*/
 .container-fluid-menu{
@@ -102,7 +104,7 @@
 }
 .menu-cart{
 	float: right; 
-	margin-right: 30px;
+	margin-right: 5%;
 }
 .menu-search{
 	float: right;
@@ -110,7 +112,7 @@
 	border-left: 1px solid #99d65c;
 }
 .menu-cart i{
-	padding-left: 25px;
+	padding-left: 5%;
 }
 .menu-search i{
 	padding-left: 25px;
@@ -136,7 +138,7 @@
 .sanpham-slide-Breadcrumbs{
 	position:absolute;
 	top: 312px;
-    left: 124px;
+	left: 124px;
 }
 .breadcrumb-edit{
 	background: none;
@@ -159,8 +161,8 @@
 }
 .home-slide-text{
 	position: absolute;
-	top: 124px;
-    left: 198px;
+	top: 25%;
+	left: 15.5%;
 }
 .home-slide-text p:nth-child(1){
 	font-size: 15px;
@@ -179,13 +181,13 @@
 	background-color: #80987e;
 	position: relative;
 	top: -199px;
-    left: 744px;
-    line-height: 50px;
-    text-align: center;
+	left: 744px;
+	line-height: 50px;
+	text-align: center;
 }
 .home-slide-btn a{
-	 color: #ffffff;
-    font-size: 19px;
+	color: #ffffff;
+	font-size: 19px;
 }
 .home-slide-btn a:hover{
 	text-decoration: none;
@@ -203,7 +205,6 @@
 	margin-top: 67px;
 }
 .content-gioithieu-tittle{
-	margin-top: 10%;
 	border-radius: 20%;
 	background:none;
 }
@@ -308,7 +309,7 @@
 	border-radius: 25px;
 }
 .tab-sp .li-sp a{
-	color: #9b9b9b;
+	color: black;
 }
 .tab-sp .li-sp:hover{
 	background-color: #75b239;
@@ -343,7 +344,7 @@
 	color: #75b239;
 }
 .thumbnail img{
-	height: 200px;
+	height: 150px;
 	overflow: hidden;
 }
 .thumbnail i{
@@ -440,10 +441,9 @@ p.content-admin-profile-p{
 	position: relative;
 }
 .footer-form{
+	width: 75%;
+	margin-left: 4%;
 	position: absolute;
-	/*margin-left: 35px;*/
-	width: 78%;
-	margin-left: 3%;
 	background-color: #75b239;
 	z-index: 9999; 
 	border-radius: 20px;
@@ -456,7 +456,6 @@ p.content-admin-profile-p{
 	padding: 6% 7% 6% 3%
 }
 .footer-form-layout-col1 h1{
-	font-size: 250%;
 	color: #fefefe;
 }
 .footer-form-layout-col1 p{
@@ -471,15 +470,16 @@ p.content-admin-profile-p{
 .footer-form-layout-col2 input{
 	background-color: #75b239;
 	border: 1px solid #ffffff;
+	color:#ffffff;
 }
 .footer-form-layout-col2 input:nth-child(2){
-	margin-bottom: 20%;
+	margin-bottom: 30%;
 }
 .footer-form-layout-col3{
-	padding-top: 10%;
+	padding-top: 9.5%;
 } 
 .footer-form-layout-col3 textarea{
-	margin-bottom: 20px;
+	margin-bottom: 1%;
 	background-color: #75b239;
 	border: 1px solid #ffffff;
 	color: #ffffff;
@@ -489,14 +489,14 @@ p.content-admin-profile-p{
 	font-size:16px; 
 	color: #fefefe;
 }
-.footer-form-layout-col3 input{
+.footer-form-layout-col3 button{
 	position: absolute;
-	bottom: 10%;
+	bottom: 7%;
 	right: 12%;
 	border-radius: 50%;
 	z-index: 1000;
-	width: 25px;
-	height: 25px;
+	width: 4%;
+	height: 10%;
 	background-color: #ffffff;
 	border: none;
 }
@@ -610,6 +610,33 @@ p.content-admin-profile-p{
 .footer-footer-right i:nth-child(7){
 	color:#ff5757;
 } 
+.content-banner img{
+	position: relative;
+}
+.camket{
+	position: absolute;
+}
+.camket{
+	padding-top: 3%;
+	width: 280px;
+	right:200px;
+	color: #ffffff;
+}
+.camket p{
+	font-size: 16px;
+}
+.camket i{
+	font-size: 50px;
+}
+.camket span{
+	padding-left: 1%;
+	font-size: 25px;
+}
+.camket .gachngang{
+		width: 50px;
+		border-bottom: 5px solid #ffffff;
+		margin: 2%;
+	}
 /*
 ket thuc css trang chu va bat dau css trang gioithieu
 */
@@ -639,11 +666,6 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	color: #364434;
 	max-width: 90%;
 	margin: 0 auto;
-}
-.about-content-doctor{
-	height: 300px;
-	margin-bottom: 70px;
-	margin-top: 45px;
 }
 .about-content-doctor img{
 	padding-left: 10%;
@@ -681,26 +703,27 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .blog-left-danhsach ul li{
 	list-style: none;
-	padding-top:15px; 
-	padding-bottom:15px;
+	padding-top:1%; 
+	padding-bottom:1%;
 }
 .blog-left-danhsach ul{
 	border-bottom:1px solid #cccccc; 
 }
 .blog-left-danhsach ul li:nth-child(2){
 	font-size: 14px;
-	color: #92b778;
 	font-style: italic;
 }
 .blog-left-danhsach ul li:nth-child(3){
 	font-size: 26px;
-	color: #75b239;
 }
 .blog-left-danhsach ul li:nth-child(4){
 	font-size: 16px;
-	color: #707070;
 }
-.blog-left-danhsach span{
+.blog-left-danhsach ul li a{
+	text-decoration: none;
+}
+.blog-left-danhsach ul a:hover{
+	text-decoration: none;
 	color: #75b239;
 }
 .blog-right-tittle h3{
@@ -721,26 +744,6 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .blog-right-danhsach-active img{
 	width: 100%;
-}
-.blog-right-danhsach-active ul li:nth-child(2){
-	font-size: 17px;
-	color: #75b239;
-}
-.blog-right-danhsach-active ul li:nth-child(3){
-	font-size: 13px;
-	color: #727272;
-}
-.blog-right-danhsach ul li:nth-child(3){
-	font-size:13px;
-	color: #727272;
-}
-.blog-right-danhsach ul li:nth-child(2){
-	font-size:17px;
-	color: #313131;
-}
-.blog-right-danhsach ul li:nth-child(3){
-	font-size:13px;
-	color: #727272;
 }
 .blog-phantrang{
 	margin-left: 15px;
@@ -763,19 +766,30 @@ ket thuc css trang chu va bat dau css trang gioithieu
 .sanpham-start i{
 	color: #f5b313;
 }
+.spcl a:hover{
+	text-decoration: none;
+}
 .content-loaisanpham{
 	padding-top: 10%;;
 }
 .content-loaisanpham .thumbnail{
 	width: 100%;
-	height: 500px;
+	height: 400px;
 }
 .content-loaisanpham .thumbnail img{
-	height:50%;
+	height:45%;
 	display: block;
 	margin-top: 20%;
- 	margin-left: auto;
- 	margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.sanpham .thumbnail{
+	width: 100%;
+	height: 500px;
+}
+.sanpham .thumbnail img{
+	width: 120px;
+	height: 260px;
 }
 .sanpham-start{
 	padding:10px 0 5px 0; 
@@ -1103,7 +1117,7 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .contact-map{
 	margin-top:90px;
-	height: 470px;
+	height: 300px;
 }
 /*css trang gio hang*/
 .giohang-layout{
@@ -1162,6 +1176,7 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	margin-top: 35px;
 	padding: 5px;
 	color: #727272;
+	width: 100%;
 }
 .giohang-table th{
 	font-size: 18px;
@@ -1169,7 +1184,8 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	color: #000000;
 }
 .giohang-redirect{
-	width: 70%;
+	padding-left:5%;
+	max-width: 400px;
 	display: flex;
 	margin:0 auto; 
 	padding-top: 30px;
@@ -1179,7 +1195,7 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	text-decoration: none;
 }
 .giohang-btn-active{
-	width: 250px;
+	width: 105%;
 	height: 48px;
 	background-color: #75b239;
 	border-radius: 25px;
@@ -1187,15 +1203,16 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	text-decoration: none;
 	color: #ffffff;
 	font-size: 18px;
-	margin-right: 5px;
+	margin-right: 5%;
 	margin: 0 auto;
 	text-align: center;
+	flex-direction: row;
 }
 .giohang-btn-active:hover{
 	background-color:#61a024;
 }
 .giohang-btn{
-	width: 250px;
+	width: 110%;
 	max-height: 48px;
 	background-color: #999999;
 	border-radius: 25px;
@@ -1203,7 +1220,8 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	text-decoration: none;
 	color: #ffffff;
 	font-size: 18px;
-	margin-left: 5px;
+	flex-direction: row;
+	margin-left: 5%;
 }
 .giohang-btn:hover{
 	background-color:#61a024;
@@ -1243,6 +1261,18 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	text-decoration: none;
 }
 .btnthanhtoan{
+	width: 50%;
+	height: 48px;
+	background-color: #75b239;
+	border-radius: 25px;
+	line-height: 48px;
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 18px;
+	margin-right: 5%;
+	margin: 0 auto;
+	text-align: center;
+
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
@@ -1269,13 +1299,13 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .pay-left input{
 	width: 100%;
-    padding: 10px;
-    color: #727272
+	padding: 10px;
+	color: #727272
 }
 .pay-left select{
 	width: 100%;
-    padding: 10px;
-    color: #727272;
+	padding: 10px;
+	color: #727272;
 }
 .pay-left  textarea{
 	width: 100%;
@@ -1319,10 +1349,10 @@ ket thuc css trang chu va bat dau css trang gioithieu
 }
 .dathang button{
 	line-height: 297%;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 16px;
+	background: none;
+	border: none;
+	color: #ffffff;
+	font-size: 16px;
 }
 .dathang a{
 	color: #ffffff;
@@ -1351,8 +1381,6 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	padding-right: 5px;
 }
 .pay-completed-cart{
-	/*margin-top: 20px;*/
-	/*margin-bottom: 20px;*/
 	padding: 5px;
 	font-size: 18px;
 }
@@ -1364,4 +1392,140 @@ ket thuc css trang chu va bat dau css trang gioithieu
 	margin-top: 10px;
 	font-size: 18px;
 	color: #000000;
+}
+@media screen and (max-width: 640px){
+	.menu .menu-menu ul {
+		width: 95%;
+	}
+	.menu .menu-menu ul li{
+		display: block;
+		border: none;
+	}
+	.container-fluid-menu{
+		height: auto;
+	}
+	.menu-cart{
+		float: none;
+	}
+	.menu-search{
+		float:left;
+	}
+	.height-thumbnail .thumbnail{
+		width: 100%;
+		height: 300px;
+	}
+	.height-thumbnail.thumbnail img{
+		width: 50px;
+		height: 100px;
+	}
+	.content-gioithieu-tittle h1{
+		font-size: 25px;
+	}
+	.content-gioithieu p{
+		font-size: 16px;
+	}
+	.content-chatluongsp p{
+		font-size: 16px;
+	}
+	.content-chatluongsp img{
+		width: 50px;
+		height: 50px;
+	}
+	#set-icon{
+		width: 50px;
+		min-height: 50px;
+	}
+	.col-xs-6{
+		width: 49%;
+	}
+	p.content-admin-profile-p{
+		font-size: 16px;
+	}
+	.footer-form{
+		width: 75%;
+		margin-top: 60px;
+	}
+	.footer-form-layout-col1 h1{
+		font-size: 20px;
+	}
+	.input-group .form-control{
+		width: 95%;
+	}
+	.footer-form-layout-col3 button{
+		width: 12%;
+		bottom: 12%;
+	}
+	.content-loaisanpham .thumbnail img{
+		width: 100px;
+	}
+	.thumbnail.splq img{
+		width: 80px;
+		height: 150px;
+	}
+	.spcl .thumbnail{
+		height: 340px;
+	}
+	.giohang-table{
+		margin-bottom: 15px;
+	}
+	.table-responsive>.table>tbody>tr>th,.table-responsive>.table>thead>tr>th{
+		white-space:unset;
+	}
+	.pay-completed {
+		margin-bottom: 35px;
+	}
+	.giohang-image img{
+		width: 52%;
+	}
+	.content-sanpham-show .thumbnail img{
+		width: 70px;
+		height: 100px;
+	}
+	.sp-image-boy img {
+		width: 200px;
+		margin: 0 auto;
+	}
+	.sp-slogan h3{
+		font-size: 25px;
+	}
+	.sp-doctor p{
+		font-size: 16px;
+	}
+	.content-doitac h4{
+		font-size: 25px;
+	}
+	.contact-adress-share i{
+		font-size: 30px;
+	}
+	.about-content-gioithieu h1{
+		font-size: 25px;
+	}
+	.about-content-gioithieu p{
+		font-size: 16px;
+	}
+	.camket{
+		padding-top: 5%;
+		width: 120px;
+		color: #ffffff;
+		right: 40px;
+		bottom: 90px;
+	}
+	.camket h2{
+		font-size: 12px;
+	}
+	.camket .gachngang{
+		width: 10px;
+		border-bottom: 1px solid #ffffff;
+		margin-bottom: 5%;
+	}
+	.camket p{
+		font-size: 8px;
+	}
+	.camket i{
+		font-size: 15px;
+	}
+	.camket span{
+		padding-left: 1%;
+		font-size: 10px;
+	}
 }

@@ -5,7 +5,7 @@
 				<div class="col-md-3 col-xs-12 footer-col1">
 					<img src="uploads/logo.png" alt="">
 					<p>Trân trọng giá trị thảo dược, Bảo Nhiên dành trọn tâm huyết của mình để cho ra đời các sản phẩm chất lượng nhất – những bảo vật thật sự đến từ thiên nhiên với ý nghĩa bảo vệ và chăm sóc sức khỏe cộng đồng.</p>
-					<img src="uploads/bocongthuong.png" alt="" style="transform:rotate(90deg);">
+					<img src="uploads/bocongthuong.png" alt="" style="transform:rotate(90deg);padding-left:10%">
 				</div>
 				<div class="col-md-3 col-xs-12 footer-col2">
 					<h4>Thông tin liên hệ</h4>
@@ -43,12 +43,20 @@
 						<p>Hãy là người đầu tiên đăng ký nhận thông tin về sản phẩm của chúng tôi</p>								
 					</div>
 					<div>
-						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Email của bạn">
-							<span class="input-group-btn">
-								<button class="btn btn-default" type="button"><i class="fas fa-chevron-right"></i></button>
-							</span>
-						</div><!-- /input-group -->
+						@if(session('email'))
+						<div class="alert alert-success">
+							{{session('email')}}<br>
+						</div>
+						@endif	
+						<form action="nhantin/them" method="POST">
+							@csrf
+							<div class="input-group">
+								<input type="email" name="emailtuvan" class="form-control" placeholder="Email của bạn">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="submit"><i class="fas fa-chevron-right"></i></button>
+								</span>
+							</div><!-- /input-group -->	
+						</form>
 					</div>
 				</div>
 			</div>
@@ -75,31 +83,47 @@
 		</div>
 		<!-- ket thuc footer -->
 		<!-- form -->
-		<div class="container hidden-xs">
+		<div class="container">
 			<div class="footer-form">
 				<div class="row">
-					<div class="col-md-12 col-xs-12 footer-form-layout">
-						<div class="col-md-5 col-xs-12 pd-col1">
+					<div class="col-md-12  footer-form-layout">
+						<div class="col-md-5  pd-col1">
 							<div class="footer-form-layout-col1">
 								<h1>Đăng ký tư vấn miễn phí !</h1>
 								<p class="hidden-xs">Hãy gửi yêu cầu cho chúng tôi sẽ giải đáp, tư vấn những sản phẩm tốt nhất cho bạn.</p>
 							</div>
+							@if ($errors->any())
+							<div class="alert alert-danger">
+								@foreach ($errors->all() as $error)
+								{{ $error }}
+								@endforeach
+							</div>
+							@endif
+							@if(session('thongbao'))
+							<div class="alert alert-success">
+								{{session('thongbao')}}<br>
+							</div>
+							@endif
 						</div>
-						<div class="col-md-7 col-xs-12 input-group">
-							<form action="" method="" class="form-inline" role="form">
+						<div class="col-md-7  input-group">
+							<form action="tuvan/them" method="POST" class="form-inline" role="form">
+								@csrf
+								<div style="display: flex;">
 								<div class=" form-group footer-form-layout-col2"><!--  footer-form-layout-col2 -->
-									<label><p>Họ và tên:</p></label>
-									<input type="text" class="form-control" placeholder="">
+									<p>Họ và tên:</p>
+									<input type="text" name="name" class="form-control">
 									<br>
-									<label><p>Số điện thoại:</p></label>
-									<input type="text" name="" class="form-control">
+									<p>Số điện thoại:</p>
+									<input type="text" name="phone" class="form-control">
 									<br>
 								</div>
 								<div class="form-group footer-form-layout-col3"><!-- footer-form-layout-col3  -->
-									<label><p>Yêu cầu:</p></label>
-									<textarea type="text" class="form-control" cols="33" rows="7"></textarea>
-									<input type="submit" name="" value="">
+									<p>Yêu cầu:</p>
+									<textarea type="text" name="noidung" rows="7" cols="55" class="form-control"></textarea>
+									<button type="submit">
 									<i class="fas fa-chevron-right"></i>
+									</button>
+								</div>
 								</div>
 							</form>
 						</div>

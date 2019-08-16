@@ -40,8 +40,44 @@
                 </ul>
                 <!-- /.nav-second-level -->
             </li>
+             <li>
+                <a href="admin/donhang/danhsach"><i class="fa fa-cube fa-fw"></i>Thông Tin Đơn Hàng<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/donhang/danhsach">Danh Sách Đơn Hàng</a>
+                    </li>
+                    <li>
+                        <a href="admin/khachhang/danhsach">Khách Hàng Liên Hệ</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+              <li>
+                <a href="admin/tintuc/danhsach"><i class="fa fa-cube fa-fw"></i>Tin Tức<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/tintuc/danhsach">Danh Sách Tin Tức</a>
+                    </li>
+                    <li>
+                        <a href="admin/tintuc/them">Thêm Tin</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
             <li>
-                <a href="#"><i class="fa fa-users fa-fw"></i>User<span class="fa arrow"></span></a>
+                <a href="admin/slide/danhsach"><i class="fa fa-cube fa-fw"></i>Slide<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/slide/danhsach">Danh Sách Slide</a>
+                    </li>
+                    <li>
+                        <a href="admin/slide/them">Thêm Slide</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
+                <a href="admin/user/danhsach"><i class="fa fa-users fa-fw"></i>User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="admin/user/danhsach">Danh Sách Người Dùng</a>
@@ -51,7 +87,28 @@
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
+            </li>    
+             <li>
+                <a href="admin/doitac/danhsach"><i class="fa fa-users fa-fw"></i>Đối Tác<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/doitac/danhsach">Danh Sách Đối Tác</a>
+                    </li>
+                    <li>
+                        <a href="admin/doitac/them">Thêm Đối Tác</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
             </li>
+            <li>
+                <a href="admin/lienhe/danhsach"><i class="fa fa-cube fa-fw"></i>Tin Nhắn<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/lienhe/danhsach">Danh Sách Tin Nhắn</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>    
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

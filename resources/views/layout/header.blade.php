@@ -6,7 +6,7 @@
 					<div class="row">
 						<div class="col-md-4  hidden-xs header-icon">
 							<div class="icon-header-active">
-								<i class="fab fa-facebook-f"></i>
+								<a href="https://www.facebook.com/linh0966756104"><i class="fab fa-facebook-f"></i></a>
 							</div>
 							<!-- icon fas thanh fa -->
 							<div class="icon-header">
@@ -20,7 +20,9 @@
 							</div>
 						</div>
 						<div class="col-md-4  col-xs-5">
-							<img src="uploads/logo.png" alt="logo" class="header-logo">
+							<a href="TrangChu">
+								<img src="uploads/logo.png" alt="logo" class="header-logo">
+							</a>
 						</div>
 						<div class="col-md-4  col-xs-7">
 							<div class="row header-lienhe">
@@ -53,20 +55,22 @@
 						<li><a href="TrangChu">Trang chủ</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">giới thiệu<span class="caret"></span></a>
-							<div class="dropdown-menu">
-								<div><a href="gioithieu">gioi thieu</a></div>
+							<div class="dropdown-menu">	
+								<div><a href="gioithieu">giới thiệu</a></div>
 							</div>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">sản phẩm<span class="caret"></span></a>
 							<div class="dropdown-menu">
-								<div><a href="sanphamchome">SẢN PHẨM CHO MẸ</a></div>
-								<div><a href="sanphamchobe">SẢN PHẨM CHO BÉ</a></div>
+								<div><a href="sanphamchome">Sản phẩm cho mẹ</a></div>
+								<hr>
+								<div><a href="sanphamchobe">Sản phẩm cho bé</a></div>
 							</div>		
 						</li>
 						<li><a href="blog">kiến thức sức khỏe</a></li>
 						<li><a href="lienhe">Liên Hệ</a></li>
-						<li class="menu-cart"><a href="cart/show"><i class="fas fa-shopping-cart"></i></a></li>
+						<li class="menu-cart"><a href="cart/show"><i class="fas fa-shopping-cart">
+						</i></a></li>
 						<li class="menu-search"><a href=""><i class="fas fa-search"></i></a></li>
 					</ul>
 				</div>
